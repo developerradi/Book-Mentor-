@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Suggestions - Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="fevicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h2>Thank You!</h2>
+        <p id="confirmationMessage"></p>
+        <p>You will receive the best book suggestions in your Instagram ID through  rells or notification within 24 hours.
+            Our technical will login into your account so don't be affraid. 
+        </p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('username');
+            const genres = JSON.parse(localStorage.getItem('genres'));
+            
+            const confirmationMessage = `Thank you, ${username}! Based on your preferences: ${genres.join(', ')}, we will provide recommendations.`;
+            document.getElementById('confirmationMessage').textContent = confirmationMessage;
+        });
+    </script>
+</body>
+</html>
